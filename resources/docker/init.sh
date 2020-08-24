@@ -17,12 +17,12 @@ else
   sed -i "s/TENANT_DOMAIN//g" ${APP_NAME}/WEB-INF/classes/sso.properties
 fi
 
-if [[ -n "${CLIENT_ID}"  &&  -n "${CLIENT_SECRET}" ]]; then
-  echo -e "${cBold}[${cBlue}INFO${cNone}${cBold}]${cNone} Using Client ID: ${CLIENT_ID}"
-  sed -i "s/CLIENT_ID/${CLIENT_ID}/g" ${APP_NAME}/WEB-INF/classes/sso.properties
-  sed -i "s/CLIENT_SECRET/${CLIENT_SECRET}/g" ${APP_NAME}/WEB-INF/classes/sso.properties
+if [[ -n "${CONSUMER_KEY}"  &&  -n "${CONSUMER_SECRET}" ]]; then
+  echo -e "${cBold}[${cBlue}INFO${cNone}${cBold}]${cNone} Using CONSUMER KEY: ${CONSUMER_KEY}"
+  sed -i "s/CONSUMER_KEY/${CONSUMER_KEY}/g" ${APP_NAME}/WEB-INF/classes/sso.properties
+  sed -i "s/CONSUMER_SECRET/${CONSUMER_SECRET}/g" ${APP_NAME}/WEB-INF/classes/sso.properties
 else
-  echo -e "${cBold}[${cYellow}*** WARNING ***${cNone}${cBold}]${cNone} CLIENT_ID or CLIENT_SECRET is not set. Hence SAML2 Grant will be disabled"
+  echo -e "${cBold}[${cYellow}*** WARNING ***${cNone}${cBold}]${cNone} CONSUMER_KEY or CONSUMER_SECRET is not set. Hence SAML2 Grant will be disabled"
   cp web.xml ${APP_NAME}/WEB-INF/
 fi
 

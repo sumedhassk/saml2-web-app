@@ -24,7 +24,7 @@
 2. Run the docker image with following command
 
     ```
-    docker run -p 8080:8080 -e TENANT_DOMAIN=<TENANT_DOMAIN> -e CLIENT_ID=<CLIENT_ID> -e CLIENT_SECRET=<CLIENT_SECRET> saml2-web-app:1.0.0
+    docker run -p 8080:8080 -e TENANT_DOMAIN=<TENANT_DOMAIN> -e CONSUMER_KEY=<CONSUMER_KEY> -e CONSUMER_SECRET=<CONSUMER_SECRET> sumedhassk/saml2-web-app:1.0.0
     ```
 
     - Following are the environment variables that should be provided.
